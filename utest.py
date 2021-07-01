@@ -9,7 +9,7 @@ class TestStringMethods(unittest.TestCase):
     def test_square(self):
         self.assertEqual(square(4), 16)
         with  self.assertRaises(TypeError):
-            square('') #must be in a context manager for the test to fail and be accepted as such
+            square('') #has to be in a context manager for the test to fail and be accepted as such
 
     def test_n_letters_is_5(self):
         self.assertEqual(n_letters_is_5('Remi'),False)
