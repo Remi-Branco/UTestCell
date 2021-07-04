@@ -1,2 +1,2 @@
 # UTestCell
-Python magic to make unittest easier using Colab/Jupyter notebooks
+Python magic to simplify unit testing with Colab/Jupyter notebooks.
