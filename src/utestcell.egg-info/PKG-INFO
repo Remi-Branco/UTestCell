@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: utestcell
-Version: 0.0.12
+Version: 0.0.13
 Summary: Python magic to simplify unit testing in Colab and Jupyter
 Home-page: https://github.com/pypa/sampleproject
 Author: Remi Branco
