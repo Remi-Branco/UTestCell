@@ -68,12 +68,12 @@ if "ipykernel" in sys.modules:
                     replace_unittest = True
 
                 elif p.strip()[0:3] == '-t:': #t for test/unittest
-                    utestname = p.strip()[3:]
+                    utest = p.strip()[3:]
 
-                elif p.strip()[0:4] == '-tr:': #t for test/unittest and r for replace
-                    #i.e. download each time
-                    utestname = p.strip()[4:]
-                    replace_unittest = True
+                #elif p.strip()[0:4] == '-tr:': #t for test/unittest and r for replace
+                #    #i.e. download each time
+                #    utestname = p.strip()[4:]
+                #    replace_unittest = True
 
             #remove fname if it already exists to avoid errors
             while exists(fname):
@@ -100,12 +100,12 @@ if "ipykernel" in sys.modules:
                     with open(utest, 'wb') as f:
                         f.write(r.content)
 
-            #open the cell's and unittests contents (if it exists), concatenate them
+            #open the cell's and unit tests contents (if it exists), concatenate them
             #and save in fname
-            with  open(fname, 'wt') as fd:
+            with open(fname, 'wt') as fd:
                 #first save content of cell in file 'fname'
                 fd.write(cell)
-                #next append the unittests if utest.py exists
+                #next append the unit tests if utest.py exists
                 if exists(utest):
                     with open(utest, 'rt') as u:
                         fd.write(u.read()) #here use .read() as unittest is a pointer
@@ -118,18 +118,16 @@ if "ipykernel" in sys.modules:
             if '-v' in line.split(" "):
                 #%run $fname -v
                 command = "%run"+ " "+fname+" -v"
-
                 #%run $fname -v
                 ipython.magic(command)
             else:
                 #%run $fname
                 command = "%run"+ " "+fname
-
                 #%run $fname
                 ipython.magic(command)
 
 
-    # In order to actually use these magics, you must register them with a
+    # In order to actually use these magics, must register them with a
     # running IPython.
 
     def load_ipython_extension(ipython):
@@ -138,6 +136,6 @@ if "ipykernel" in sys.modules:
         can be loaded via `%load_ext module.path` or be configured to be
         autoloaded by IPython at startup time.
         """
-        # You can register the class itself without instantiating it.  IPython will
+        #register the class itself without instantiating it.  IPython will
         # call the default constructor on it.
         ipython.register_magics(MyMagics)
