@@ -13,7 +13,7 @@ Then add at the top of the cell
 
 To use a test file stored on Github:
 ```python
-#in cell1:
+#in cell #1
 url = 'url of test.py file'
 ```
 ```python

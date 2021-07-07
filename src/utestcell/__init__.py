@@ -43,11 +43,6 @@ if "ipykernel" in sys.modules:
                   same as above + erase unittest before running tests (useful to obtain latest version)
             """
 
-            #from os.path import exists
-            #from time import sleep
-            #from os import remove
-
-            #from IPython import get_ipython
             ipython = get_ipython()
 
             line = line.strip() #to remove any white spaces before/trailing
