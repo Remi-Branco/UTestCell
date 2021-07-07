@@ -11,4 +11,14 @@ Then add at the top of the cell
 %%utestcell
 ```
 
+To use a test file stored on Github:
+```python
+#in cell1:
+url = 'url of test.py file'
+```
+```python
+#in cell #2
+%%utestcell -u:$url
+```
+
 See a detailed explanation on my <a href="https://remibranco.com/?p=221">blog</a> and on the Github repo.
