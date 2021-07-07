@@ -2,6 +2,12 @@ from __future__ import print_function
 from IPython.core.magic import (Magics, magics_class, line_magic,
                                     cell_magic, line_cell_magic)
 import sys
+
+from os.path import exists
+from time import sleep
+from os import remove
+from IPython import get_ipython
+
 if "ipykernel" in sys.modules:
     # This code can be put in any Python module, it does not require IPython
     # itself to be running already.  It only creates the magics subclass but
@@ -37,11 +43,11 @@ if "ipykernel" in sys.modules:
                   same as above + erase unittest before running tests (useful to obtain latest version)
             """
 
-            from os.path import exists
-            from time import sleep
-            from os import remove
+            #from os.path import exists
+            #from time import sleep
+            #from os import remove
 
-            from IPython import get_ipython
+            #from IPython import get_ipython
             ipython = get_ipython()
 
             line = line.strip() #to remove any white spaces before/trailing
